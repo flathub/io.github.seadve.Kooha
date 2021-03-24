@@ -55,8 +55,8 @@
                 {
                     "tag" : "v1.0.0",
                     "type" : "archive",
-                    "url" : "https://github.com/SeaDve/Kooha/archive/v1.0.4.tar.gz",
-                    "sha256" : "8f252f06d5e24a2bf28f4fd78bb9f18be1fe23420765a7717be6f9867b64c3b1"
+                    "url" : "https://github.com/SeaDve/Kooha/archive/v1.0.5.tar.gz",
+                    "sha256" : "10d04f8e710ee1928ed5638f4dfbc929105c0efe7d9e4732eeed08ae7285dec6"
                 }
             ]
         }
