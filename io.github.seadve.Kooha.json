@@ -1,64 +1,64 @@
 {
-    "app-id" : "io.github.seadve.Kooha",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.38",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "kooha",
-    "finish-args" : [
-        "--share=ipc",
-        "--socket=fallback-x11",
-        "--socket=wayland",
-        "--socket=pulseaudio",
-        "--filesystem=xdg-videos",
-        "--talk-name=org.gnome.Shell.Screencast",
-        "--talk-name=org.gnome.Shell.Screenshot"
-    ],
-    "cleanup" : [
+  "app-id": "io.github.seadve.Kooha",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "3.38",
+  "sdk": "org.gnome.Sdk",
+  "command": "kooha",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--filesystem=xdg-videos",
+    "--talk-name=org.gnome.Shell.Screencast",
+    "--talk-name=org.gnome.Shell.Screenshot"
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/man",
+    "/share/doc",
+    "/share/gtk-doc",
+    "/share/man",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    {
+      "name": "libhandy",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dgtk_doc=false",
+        "-Dtests=false",
+        "-Dexamples=false",
+        "-Dvapi=false",
+        "-Dglade_catalog=disabled"
+      ],
+      "cleanup": [
         "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
-    "modules" : [
-    	{
-            "name" : "libhandy",
-            "buildsystem": "meson",
-            "config-opts":[
-          	"-Dgtk_doc=false",
-          	"-Dtests=false",
-          	"-Dexamples=false",
-          	"-Dvapi=false",
-          	"-Dglade_catalog=disabled"
-            ],
-            "cleanup" : [
-                "/include",
-                "/lib/pkgconfig"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libhandy.git",
-                    "tag" : "1.0.2"
-                }
-            ]
-        },
+        "/lib/pkgconfig"
+      ],
+      "sources": [
         {
-            "name" : "kooha",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "tag" : "v1.0.0",
-                    "type" : "archive",
-                    "url" : "https://github.com/SeaDve/Kooha/archive/v1.1.0.tar.gz",
-                    "sha256" : "121b51d9369b630395c7798874dc66b5c75becfdd60a54f46f40783580d640e7"
-                }
-            ]
+          "type": "git",
+          "url": "https://gitlab.gnome.org/GNOME/libhandy.git",
+          "tag": "1.0.2"
         }
-    ]
+      ]
+    },
+    {
+      "name": "kooha",
+      "builddir": true,
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "tag": "v1.1.1",
+          "type": "archive",
+          "url": "https://github.com/SeaDve/Kooha/archive/v1.1.1.tar.gz",
+          "sha256": "a4c1429dbc8b245e56b16c30091c7e4339075dbd3a422a2dd2e73779d1247b9d"
+        }
+      ]
+    }
+  ]
 }
