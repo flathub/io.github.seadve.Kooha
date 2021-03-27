@@ -1,2 +1,5 @@
-.flatpak-builder
-build-dir
+.idea/
+.flatpak-builder/
+flatpak-repo/
+tmp/
+build/
