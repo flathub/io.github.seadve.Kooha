@@ -31,10 +31,10 @@
       "buildsystem": "meson",
       "sources": [
         {
-          "tag": "v1.1.1",
+          "tag": "v1.1.2",
           "type": "archive",
-          "url": "https://github.com/SeaDve/Kooha/archive/v1.1.1.tar.gz",
-          "sha256": "7087a268e02c27d47fa30fd761f05c36135bbb3aa80d80ab89ef0708f0559fd3"
+          "url": "https://github.com/SeaDve/Kooha/archive/v1.1.2.tar.gz",
+          "sha256": "c2c3c5b68cfb8cd7b0ec94771d12d9ed77e8bea93be4dfc2398f3eb882c386c5"
         }
       ]
     }
