@@ -1,5 +1,5 @@
 {
-    "app-id": "io.github.seadve.Kooha.Devel",
+    "app-id": "io.github.seadve.Kooha",
     "runtime": "org.gnome.Platform",
     "runtime-version": "41",
     "sdk": "org.gnome.Sdk",
