@@ -1,24 +1,34 @@
 {
-    "app-id": "io.github.seadve.Kooha.Devel",
+    "app-id": "io.github.seadve.Kooha",
     "runtime": "org.gnome.Platform",
     "runtime-version": "41",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
     "command": "kooha",
     "finish-args" : [
+        "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--socket=pulseaudio",
         "--filesystem=xdg-videos",
-        "--talk-name=org.gnome.Shell"
+        "--talk-name=org.gnome.Shell",
+        "--talk-name=org.a11y.Bus"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin",
-        "build-args" : [
-            "--share=network"
-        ]
+        "append-path" : "/usr/lib/sdk/rust-stable/bin"
     },
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
     "modules": [
         {
             "name": "x264",
@@ -29,9 +39,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245-stable.tar.bz2",
-                    "sha256": "b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160"
+                    "type": "git",
+                    "url": "https://code.videolan.org/videolan/x264.git",
+                    "commit": "5db6aa6cab1b146e07b60cc1736a01f21da01154"
                 }
             ]
         },
@@ -51,8 +61,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.18.4.tar.xz",
-                    "sha256": "218df0ce0d31e8ca9cdeb01a3b0c573172cc9c21bb3d41811c7820145623d13c"
+                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.18.5.tar.xz",
+                    "sha256": "df32803e98f8a9979373fa2ca7e05e62f977b1097576d3a80619d9f5c69f66d9"
                 }
             ]
         },
@@ -69,8 +79,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.18.4.tar.xz",
-                    "sha256": "92db98af86f3150d429c9ab17e88d2364f9c07a140c8f445ed739e8f10252aea"
+                    "url": "https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.18.5.tar.xz",
+                    "sha256": "4a460fb95559f41444eb24864ad2d9e37922b6eea941510310319fc3e0ba727b"
                 }
             ]
         },
@@ -90,21 +100,45 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "branch" : "main"
+                    "commit" : "e2dd9a2c9fbe963ef245c255cb3c73d74610334e"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "libsass",
+                    "buildsystem": "meson",
+                    "cleanup": ["*"],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/lazka/libsass.git",
+                            "commit": "302397c0c8ae2d7ab02f45ea461c2c3d768f248e"
+                        }
+                    ]
+                },
+                {
+                    "name": "sassc",
+                    "buildsystem": "meson",
+                    "cleanup": ["*"],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/lazka/sassc.git",
+                            "commit": "82803377c33247265d779af034eceb5949e78354"
+                        }
+                    ]
                 }
             ]
         },
         {
             "name": "kooha",
             "buildsystem": "meson",
-            "run-tests": true,
-            "config-opts": ["-Dprofile=default"],
             "sources": [
                 {
                     "tag": "v2.0.0",
                     "type": "archive",
-                    "url": "https://github.com/SeaDve/Kooha/archive/v2.0.0.tar.gz",
-                    "sha256": "bd56477d35b21cfb1fb5c7ccff539f6abc7f67c0809d4faaf453c99a1fcc7824"
+                    "url": "https://github.com/SeaDve/Kooha/releases/download/v2.0.0/kooha-2.0.0.tar.xz",
+                    "sha256": "52a70d0ee473344eb318a171635a4924b4f607aab549a3561fbd85276da79390"
                 }
             ]
         }
