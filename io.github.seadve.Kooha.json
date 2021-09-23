@@ -137,8 +137,8 @@
                 {
                     "tag": "v2.0.0",
                     "type": "archive",
-                    "url": "https://github.com/SeaDve/Kooha/archive/v2.0.0.tar.gz",
-                    "sha256": "bd56477d35b21cfb1fb5c7ccff539f6abc7f67c0809d4faaf453c99a1fcc7824"
+                    "url": "https://github.com/SeaDve/Kooha/releases/download/v2.0.0/kooha-2.0.0.tar.xz",
+                    "sha256": "52a70d0ee473344eb318a171635a4924b4f607aab549a3561fbd85276da79390"
                 }
             ]
         }
