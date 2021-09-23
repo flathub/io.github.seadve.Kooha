@@ -6,6 +6,7 @@
     "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
     "command": "kooha",
     "finish-args" : [
+        "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
