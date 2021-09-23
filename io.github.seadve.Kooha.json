@@ -132,8 +132,6 @@
         {
             "name": "kooha",
             "buildsystem": "meson",
-            "run-tests": true,
-            "config-opts": ["-Dprofile=default"],
             "sources": [
                 {
                     "tag": "v2.0.0",
