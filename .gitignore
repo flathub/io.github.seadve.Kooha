@@ -3,3 +3,5 @@
 flatpak-repo/
 tmp/
 build/
+.vscode
+.flatpak
