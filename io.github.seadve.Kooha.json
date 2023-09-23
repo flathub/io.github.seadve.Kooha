@@ -1,7 +1,7 @@
 {
     "id": "io.github.seadve.Kooha",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -12,8 +12,7 @@
         "--filesystem=xdg-videos",
         "--socket=fallback-x11",
         "--socket=pulseaudio",
-        "--socket=wayland",
-        "--talk-name=org.freedesktop.FileManager1"
+        "--socket=wayland"
     ],
     "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin"
@@ -61,8 +60,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.20.3.tar.xz",
-                    "sha256": "8caa20789a09c304b49cf563d33cca9421b1875b84fcc187e4a385fa01d6aefd"
+                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.22.6.tar.xz",
+                    "sha256": "3e31454c98cb2f7f6d2d355eceb933a892fa0f1dc09bc36c9abc930d8e29ca48"
                 }
             ]
         },
@@ -72,8 +71,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/SeaDve/Kooha/releases/download/v2.2.3/kooha-2.2.3.tar.xz",
-                    "sha256": "d394dbb5f15d6d846e1e3a78e7f7b5585876ae6f219996a91c416ca5ff94f171"
+                    "url": "https://github.com/SeaDve/Kooha/releases/download/v2.2.4/kooha-2.2.4.tar.xz",
+                    "sha256": "ed17a2de6838adc89b1d7e7a37bbd8d22a25dd2ad6efabcb735d611eb2b51d31"
                 }
             ]
         }
