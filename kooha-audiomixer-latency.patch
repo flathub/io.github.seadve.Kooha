@@ -1,0 +1,15 @@
+diff --git a/src/pipeline.rs b/src/pipeline.rs
+index 403e2c1..4c06b0b 100644
+--- a/src/pipeline.rs
++++ b/src/pipeline.rs
+@@ -324,7 +324,9 @@ pub fn pipewiresrc_bin(
+ fn pulsesrc_bin<'a>(device_names: impl IntoIterator<Item = &'a str>) -> Result<gst::Bin> {
+     let bin = gst::Bin::new();
+ 
+-    let audiomixer = gst::ElementFactory::make("audiomixer").build()?;
++    let audiomixer = gst::ElementFactory::make("audiomixer")
++        .property("latency", gst::ClockTime::from_seconds(2))
++        .build()?;
+     let audiorate = gst::ElementFactory::make("audiorate").build()?;
+     let audioconvert = gst::ElementFactory::make("audioconvert").build()?;
+     let queue = gst::ElementFactory::make("queue").build()?;
