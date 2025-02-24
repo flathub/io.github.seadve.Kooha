@@ -1,7 +1,7 @@
 {
     "id": "io.github.seadve.Kooha",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -10,6 +10,7 @@
     "finish-args": [
         "--device=dri",
         "--filesystem=xdg-videos",
+        "--share=ipc",
         "--socket=fallback-x11",
         "--socket=pulseaudio",
         "--socket=wayland"
@@ -40,7 +41,6 @@
                 {
                     "type": "git",
                     "url": "https://code.videolan.org/videolan/x264.git",
-                    "branch": "stable",
                     "commit": "31e19f92f00c7003fa115047ce50978bc98c3a0d"
                 }
             ]
@@ -61,8 +61,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.22.10.tar.xz",
-                    "sha256": "cc80a81a22c0b3b31ab7f1b8bf18dda23c72d2791b86cc6264923a68336329ea"
+                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.24.12.tar.xz",
+                    "sha256": "19ed6eef4ea1a742234fb35e2cdb107168595a4dd409a9fac0b7a16543eee78b"
                 }
             ]
         },
