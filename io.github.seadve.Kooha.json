@@ -1,7 +1,7 @@
 {
     "id": "io.github.seadve.Kooha",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -18,54 +18,7 @@
     "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin"
     },
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
     "modules": [
-        {
-            "name": "x264",
-            "config-opts": [
-                "--enable-shared",
-                "--enable-pic",
-                "--disable-cli"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://code.videolan.org/videolan/x264.git",
-                    "commit": "31e19f92f00c7003fa115047ce50978bc98c3a0d"
-                }
-            ]
-        },
-        {
-            "name": "gst-plugins-ugly",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Ddoc=disabled",
-                "-Dnls=disabled",
-                "-Dtests=disabled",
-                "-Dgpl=enabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.24.13.tar.xz",
-                    "sha256": "dc08bb11dce0a43453466fb9034e4fe06709fb5af68475bcf6d288693b661a5d"
-                }
-            ]
-        },
         {
             "name": "kooha",
             "buildsystem": "meson",
